@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.cegepvicto.convertisseurmesures.ConvertisseurController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Text>Convertisseur</Text>
+
+    <GridPane hgap="10" vgap="5">
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0">Type de conversion</Label>
+        <ComboBox GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="2" fx:id="typeConversion"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1">Valeur à convertir</Label>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="2" fx:id="valeurAConvertir"/>
+
+        <ComboBox GridPane.columnIndex="0" GridPane.rowIndex="2" fx:id="uniteMesure"/>
+        <Label GridPane.columnIndex="1" GridPane.rowIndex="2">en</Label>
+        <ComboBox GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="uniteConvertie"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="3">Enregistrer dans le fichier</Label>
+        <CheckBox GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.columnSpan="2" fx:id="enregistrerFichier"/>
+
+        <HBox GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="3" alignment="CENTER_RIGHT">
+            <Button text="Convertir" onAction="#onConvertirClic"/>
+        </HBox>
+
+    </GridPane>
+</VBox>
