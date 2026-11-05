@@ -40,5 +40,7 @@
 
         <Text GridPane.columnIndex="0" GridPane.rowIndex="5">Valeur convertie</Text>
         <Text GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="2" fx:id="valeurConvertieTexte"/>
+
+        <Text GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="3" fx:id="erreurEnregistrement"/>
     </GridPane>
 </VBox>
