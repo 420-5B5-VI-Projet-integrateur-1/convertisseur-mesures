@@ -2,7 +2,7 @@ package edu.cegepvicto.convertisseurmesures.convertisseur;
 
 public class Convertisseur {
 
-    public static double convertir(TypeMesure typeMesure, double valeur,
+    public double convertir(TypeMesure typeMesure, double valeur,
                                    UniteMesure uniteValeur, UniteMesure uniteConvertir) throws IllegalArgumentException
     {
         // Vérification d'intégrité des données

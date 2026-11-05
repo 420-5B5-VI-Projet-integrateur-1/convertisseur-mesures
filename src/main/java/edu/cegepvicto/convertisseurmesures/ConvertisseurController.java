@@ -1,5 +1,6 @@
 package edu.cegepvicto.convertisseurmesures;
 
+import edu.cegepvicto.convertisseurmesures.convertisseur.Convertisseur;
 import edu.cegepvicto.convertisseurmesures.convertisseur.Systeme;
 import edu.cegepvicto.convertisseurmesures.convertisseur.TypeMesure;
 import edu.cegepvicto.convertisseurmesures.convertisseur.UniteMesure;
@@ -9,13 +10,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConvertisseurController {
 
-    private List<TypeMesure> typesMesures;
+    private Convertisseur convertisseur;
 
     @FXML
     private  TextField valeurAConvertir;
@@ -33,20 +35,37 @@ public class ConvertisseurController {
     private CheckBox enregistrerFichier;
 
     @FXML
+    private Text valeurConvertieTexte;
+
+    @FXML
     private void initialize()
     {
-        typesMesures = creerTypesMesures();
-
+        convertisseur = new Convertisseur();
         creerLiaisonInterface();
 
         // Peuplement du contrôle de type mesure
+        List<TypeMesure> typesMesures = creerTypesMesures();
         typeConversion.setItems(FXCollections.observableList(typesMesures));
         typeConversion.getSelectionModel().select(0);
     }
 
     @FXML
     private void onConvertirClic(ActionEvent actionEvent) {
+        TypeMesure typeMesure = typeConversion.getSelectionModel().getSelectedItem();
+        UniteMesure uniteMesureOriginale = uniteMesure.getSelectionModel().getSelectedItem();
+        UniteMesure uniteMesureConvertie = uniteConvertie.getSelectionModel().getSelectedItem();
 
+        double valeur = 0.0;
+
+        try {
+            valeur = Double.parseDouble(valeurAConvertir.getText());
+            double valeurConvertie = convertisseur.convertir(
+                    typeMesure, valeur, uniteMesureOriginale, uniteMesureConvertie
+            );
+            valeurConvertieTexte.setText(String.format("%.4f", valeurConvertie));
+        } catch(NumberFormatException exception) {
+
+        }
     }
 
     private List<TypeMesure> creerTypesMesures(){
@@ -70,7 +89,7 @@ public class ConvertisseurController {
         mesuresMasse.add(
                 new UniteMesure("Tonne", Systeme.IMPERIAL, 0.000446429));
 
-        typesMesures = new ArrayList<>();
+        List<TypeMesure> typesMesures = new ArrayList<>();
         typesMesures.add(new TypeMesure("Distance", 3.28084, mesuresDistance));
         typesMesures.add(new TypeMesure("Masse", 2.204625, mesuresMasse));
 

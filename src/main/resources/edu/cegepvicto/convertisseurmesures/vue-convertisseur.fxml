@@ -38,5 +38,7 @@
             <Button text="Convertir" onAction="#onConvertirClic"/>
         </HBox>
 
+        <Text GridPane.columnIndex="0" GridPane.rowIndex="5">Valeur convertie</Text>
+        <Text GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="2" fx:id="valeurConvertieTexte"/>
     </GridPane>
 </VBox>

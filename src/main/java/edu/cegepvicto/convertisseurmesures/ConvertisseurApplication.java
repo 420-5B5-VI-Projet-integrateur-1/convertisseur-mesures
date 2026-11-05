@@ -11,7 +11,7 @@ public class ConvertisseurApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ConvertisseurApplication.class.getResource("vue-convertisseur.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 920, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 500, 350);
         stage.setTitle("Convertisseur");
         stage.setScene(scene);
         stage.show();
