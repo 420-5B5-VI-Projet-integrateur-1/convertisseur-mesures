@@ -135,21 +135,21 @@ public class ConvertisseurController {
         mesuresDistance.add(
                 new UniteMesure("Mètre", Systeme.SYSTEME_INTERNATIONAL, 1.0));
         mesuresDistance.add(
-                new UniteMesure("Centimètre", Systeme.SYSTEME_INTERNATIONAL, 100));
+                new UniteMesure("Centimètre", Systeme.SYSTEME_INTERNATIONAL, .01));
         mesuresDistance.add(
                 new UniteMesure("Pied", Systeme.IMPERIAL, 1.0));
         mesuresDistance.add(
-                new UniteMesure("Mille natique", Systeme.IMPERIAL, 0.0001645787));
+                new UniteMesure("Mille nautique", Systeme.IMPERIAL, 6280));
 
         List<UniteMesure> mesuresMasse = new ArrayList<>();
         mesuresMasse.add(
                 new UniteMesure("Kilogramme", Systeme.SYSTEME_INTERNATIONAL, 1.0));
         mesuresMasse.add(
-                new UniteMesure("Gramme", Systeme.SYSTEME_INTERNATIONAL, 1000));
+                new UniteMesure("Gramme", Systeme.SYSTEME_INTERNATIONAL, .001));
         mesuresMasse.add (
                 new UniteMesure("Livre", Systeme.IMPERIAL, 1.0));
         mesuresMasse.add(
-                new UniteMesure("Tonne", Systeme.IMPERIAL, 0.000446429));
+                new UniteMesure("Tonne", Systeme.IMPERIAL, 2000));
 
         List<TypeMesure> typesMesures = new ArrayList<>();
         typesMesures.add(new TypeMesure("Distance", 3.28084, mesuresDistance));

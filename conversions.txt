@@ -1,1 +1,2 @@
 Conversion de Distance[Mètre] -> [Pied] : 2.0 -> 6.56168
+Conversion de Distance [Pied] -> [Mille natique] : 5.0 -> 30380.60210707704
